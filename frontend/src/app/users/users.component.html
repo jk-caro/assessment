@@ -1,0 +1,56 @@
+<div class="card">
+  <div class="header">
+    <div class="d-flex">
+      <h2>User Details</h2>
+
+      <form id="navbar-search" class="navbar-form search-form ml-5">
+        <input value="" [(ngModel)]="q" name="q" class="form-control" placeholder="Search here..." type="text">
+        <button (click)="changeQueryParam()" class="btn btn-default"><i class="icon-magnifier"></i></button>
+      </form>
+    </div>
+
+    <ul class="header-dropdown">
+      <li class="dropdown">
+        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+          aria-expanded="false"></a>
+        <ul class="dropdown-menu dropdown-menu-right"
+          style="top: 0px; position: absolute; transform: translate3d(28px, 31px, 0px); left: 0px; will-change: transform;"
+          x-placement="bottom-end">
+          <li><a href="/user?role=1">User</a></li>
+          <li><a href="/user?role=2">Admin</a></li>
+          <li><a href="/user?role=3">Guest</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="body">
+    <div class="table-responsive">
+      <table class="table m-b-0 table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Moble</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user._id }}</td>
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.mobile }}</td>
+            <td>
+                <div *ngIf="user.role == 1">User</div>
+                <div *ngIf="user.role == 2">Admin</div>
+                <div *ngIf="user.role == 3">Guest</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+
+<div id="wrapper">
+    <div class="vertical-align-wrap">
+      <div class="vertical-align-middle auth-main">
+        <div class="auth-box">
+          <div class="top">
+            <img src="https://www.wrraptheme.com/templates/lucid/html/assets/images/logo-white.svg" alt="Lucid">
+          </div>
+          <div class="card">
+            <div class="header">
+              <p class="lead">Login to your account</p>
+              <p *ngIf="errorMessage" class="lead text-danger">{{errorMessage}}</p>
+            </div>
+            <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="body">
+              <div class="form-auth-small" action="">
+                <div class="form-group">
+                  <label for="signin-email" class="control-label sr-only">Email</label>
+                  <input type="email" [(ngModel)]="email" name="email" required class="form-control" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <label for="signin-password" class="control-label sr-only">Password</label>
+                  <input type="password" [(ngModel)]="password" name="password" required class="form-control" placeholder="Password">
+                </div>
+                <button type="submit" type="submit" [disabled]="!loginForm.form.valid"  class="btn btn-primary btn-lg btn-block" href="xyz">LOGIN</button>
+                <div class="bottom">
+                  <span>Don't have an account? <a href="/signup">Register</a></span>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

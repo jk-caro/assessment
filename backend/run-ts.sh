@@ -1,0 +1,1 @@
+NODE_ENV=PROD ts-node -T ./src/app.ts

@@ -1,0 +1,56 @@
+
+<div id="wrapper">
+    <div class="vertical-align-wrap">
+      <div class="vertical-align-middle auth-main">
+        <div class="auth-box">
+          <div class="top">
+            <img src="https://www.wrraptheme.com/templates/lucid/html/assets/images/logo-white.svg" alt="Lucid">
+          </div>
+          <div class="card">
+            <div class="header">
+              <p class="lead">Create new account</p>
+              <p *ngIf="errorMessage" class="lead text-danger">{{errorMessage}}</p>
+            </div>
+            <form (ngSubmit)="onSubmit()" #signupForm="ngForm" class="body">
+              <div class="form-auth-small" action="">
+                <div class="form-group">
+                  <label for="" class="control-label sr-only">First Name</label>
+                  <input type="text" [(ngModel)]="firstName" name="firstName" required class="form-control" placeholder="First Name">
+                </div>
+                <div class="form-group">
+                  <label for="" class="control-label sr-only">Last Name</label>
+                  <input type="text" [(ngModel)]="lastName" name="lastName" required class="form-control" placeholder="Last Name">
+                </div>
+                <div class="form-group">
+                  <label for="" class="control-label sr-only">Email</label>
+                  <input type="email" [(ngModel)]="email" name="email" required class="form-control" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <label for="" class="control-label sr-only">Mobile</label>
+                  <input type="number" [(ngModel)]="mobile" name="mobile" required class="form-control" placeholder="Mobile">
+                </div>
+                <div class="form-group">
+                  <label for="" class="control-label sr-only">Password</label>
+                  <input type="password" [(ngModel)]="password" name="password" required class="form-control"
+                    placeholder="Password">
+                </div>
+                <div class="form-group">
+                  <label for="" class="control-label sr-only">Role</label>
+                  <select [(ngModel)]="role" name="role" required class="form-control">
+                    <option value="1">User</option>
+                    <option value="2">Admin</option>
+                    <option value="3">Guest</option>
+                  </select>
+                </div>
+                <button type="submit" type="submit" [disabled]="!signupForm.form.valid"  class="btn btn-primary btn-lg btn-block" href="xyz">SUBMIT</button>
+                <div class="bottom">
+                  <span>Already have an account? <a href="/">Login</a></span>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
